@@ -1,0 +1,9 @@
+<library path="firmware">
+    <class name="ros2_control_hardware/DCMotorHardwareInterface"
+            type="ros2_control_hardware::DCMotorHardwareInterface"
+            base_class_type="hardware_interface::SystemInterface">
+        <description>
+            Hardware interface for 2 wheeled robot (motors are manipulated directly by Pi)
+        </description>
+    </class>    
+</library>
