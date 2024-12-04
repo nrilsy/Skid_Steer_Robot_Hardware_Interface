@@ -1,0 +1,47 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # Hz
+    use_sim_time: false
+
+    diff_controller:
+      type: diff_drive_controller/DiffDriveController
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+diff_controller:
+  ros__parameters:
+    use_stamped_vel: true
+    publish_rate: 50.0
+    left_wheel_names: ['base_left_front_wheel_joint']
+    right_wheel_names: ['base_right_front_wheel_joint']
+    wheel_separation: 0.15
+    wheel_radius: 0.034
+    cmd_vel_timeout: 1.0
+    base_frame_id: base_footprint
+    # Publish wheel data
+    publish_wheel_data: true
+    # Publish to TF directly or not
+    enable_odom_tf: true
+    wheels_per_side: 1
+    enable_odom_tf: false
+    
+    linear.x.has_velocity_limits: true
+    linear.x.has_acceleration_limits: false
+    linear.x.has_jerk_limits: false
+    linear.x.max_velocity: 0.8
+    linear.x.min_velocity: 0.0
+    linear.x.max_acceleration: 0.0
+    linear.x.min_acceleration: 0.0
+    linear.x.max_jerk: 0.0
+    linear.x.min_jerk: 0.0
+
+    angular.z.has_velocity_limits: false
+    angular.z.has_acceleration_limits: false
+    angular.z.has_jerk_limits: false
+    angular.z.max_velocity: 0.0
+    angular.z.min_velocity: 0.0
+    angular.z.max_acceleration: 0.0
+    angular.z.min_acceleration: 0.0
+    angular.z.max_jerk: 0.0
+    angular.z.min_jerk: 0.0
